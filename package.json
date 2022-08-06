@@ -1,0 +1,17 @@
+{
+  "name": "web-server",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc -p src/tsconfig.json"
+  },
+  "keywords": [],
+  "main": "dist/main",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.4.8",
+    "express": "^4.17.1"
+  }
+}
