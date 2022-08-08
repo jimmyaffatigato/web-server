@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import express = require("express");
 import path = require("path");
 
