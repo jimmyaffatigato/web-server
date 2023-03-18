@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 
-export default class Server {
+export default class WebServer {
     constructor(publicPath: string, port: number = 80) {
         const app = express();
         publicPath = path.resolve(publicPath);

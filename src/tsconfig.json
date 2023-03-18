@@ -3,6 +3,7 @@
     "target": "es2022",
     "lib": ["esnext"],
     "module": "Node16",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "resolveJsonModule": true
   }
 }

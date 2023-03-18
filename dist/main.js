@@ -21799,10 +21799,10 @@ var require_express2 = __commonJS({
   }
 });
 
-// src/Server.ts
+// src/WebServer.ts
 var import_express = __toESM(require_express2());
 var import_path = __toESM(require("path"));
-var Server = class {
+var WebServer = class {
   constructor(publicPath, port = 80) {
     const app = (0, import_express.default)();
     publicPath = import_path.default.resolve(publicPath);
@@ -21818,13 +21818,24 @@ var Server = class {
   }
 };
 
+// package.json
+var version = "1.0.1";
+
 // src/main.ts
-var PORT = Number(process.argv[3]) || 80;
-var PUBLIC = process.argv[2];
-if (!PUBLIC) {
-  console.error("Provide a public folder path.");
+console.log(`Web Server ${version} by Jimmy. NOT SAFE FOR PRODUCTION.`);
+var command = process.argv[2];
+if (command == "-h" || command == "-help") {
+  console.log(`Host a directory on this machine.`);
+  console.log(`For local testing, NOT SAFE FOR PRODUCTION.`);
+  console.log(`Provide the public path and optionally a port number. Default port is 80 (requires root).`);
 } else {
-  const server = new Server(PUBLIC, PORT);
+  const PUBLIC = command;
+  const PORT = Number(process.argv[3]) || 80;
+  if (!PUBLIC) {
+    console.error("Provide a public folder path.");
+  } else {
+    const server = new WebServer(PUBLIC, PORT);
+  }
 }
 /*!
  * accepts
